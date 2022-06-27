@@ -6,9 +6,12 @@
   <title>Happy Birthday</title>
  </head>
  <body>
-    <div class='dot' id= "happy"><p>Happy</p></div>
-    <div class='dot' id="birthday" style="right:0px"><p>Birthday!</p></div>
-    <div class="text" id="text1" style="bottom:0px"></div>
+    <div class="row">
+        <div class='dot' id= "happy"><p>Happy</p></div>
+        <div class='dot' id="birthday" style="right:0px"><p>Birthday!</p></div>
+    </div>
+
+    <div class="text" id="text1" style="bottom:0%"></div>
     <div class="text" id="text2" style="bottom:0px"></div>
     <script>
         const text1part = 
@@ -20,8 +23,8 @@
         var birthday = document.getElementById("birthday");
         var div1 = document.getElementById("text1");
         var div2 = document.getElementById("text2");
-        const bottom1 = 3;
-        const bottom2 = 4;
+        const bottom1 = 40;
+        const bottom2 = 50;
         let timer = setInterval(function() {
             // сколько времени прошло с начала анимации?
             let timePassed = Date.now() - start;
@@ -37,14 +40,14 @@
             }, 20);
 
         function drawHappy(timePassed) {
-            happy.style.left = timePassed / 2.3 + 'px';
+            happy.style.left = timePassed / 42 + '%';
         }
         function drawBirthday(timePassed) {
-            birthday.style.right = timePassed/2.4 + 'px';
+            birthday.style.left = timePassed/41 + '%';
         }
         function drawText(passedTime,text,div, format) {
             div.innerHTML = text;
-            div.style.bottom = passedTime/format + 'px';
+            div.style.bottom = passedTime/format + '%';
         }
         function animateText(text,div, format) {
             var startTime = Date.now();
